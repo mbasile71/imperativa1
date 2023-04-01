@@ -142,13 +142,17 @@ console.log(res)*/
 let matrix4 = [
     [1, 1, 1],
     [2, 2, 2],
-    [3, 3, 10],
+    [3, 3, 3],
     ]; 
+    
     let sumaMatriz = 0
     let sumarTodaMatriz = (mat)=>{
-    for (let i = 0; i < mat[0].length; i++) {
-        for (let j = 0; j < mat.length; j++) {
-            sumaMatriz += mat[i][j]
+    
+        for (let i = 0; i < mat.length; i++) {
+        
+            for (let j = 0; j < mat[i].length; j++) {
+            
+                sumaMatriz += mat[i][j]
             
         }
     }
@@ -157,3 +161,50 @@ let matrix4 = [
     let result = sumarTodaMatriz(matrix4)
     console.log(result)
 
+
+
+    // RECORRER DIAGONAL PRINCIPAL DE UNA MATRIZ
+     
+    let matrix5 = [
+        [1, 1, 1, 8],
+        [2, 2, 2, 5],
+        [3, 3, 3, 3],
+        [3, 6, 3, 9],
+        ]; 
+
+    let diagonalPrincipal = (mat)=>{
+
+        for (let i = 0; i < mat.length; i++) {
+            
+            console.table(mat[i][i])
+            
+        } 
+
+    }    
+    diagonalPrincipal(matrix5)
+
+
+    // RECORRER DIAGONAL SECONDARIA DE UNA MATRIZ
+     
+    let matrix6 = [
+        [1, 1, 1, 8],
+        [2, 2, 2, 5],
+        [3, 3, 3, 3],  
+        [3, 6, 3, 9],
+        ]; 
+
+    const diagonalSecundaria = (mat)=>{
+        
+        //let col = mat.length
+        
+        for (let i = 0; i < mat.length; i++) {
+            
+            console.log(mat[i][mat.length - 1 - i])
+            //console.log(mat[i][col-1])
+            //col--
+
+            
+        }
+    }
+    console.log("-------------------")    
+    diagonalSecundaria(matrix6)
